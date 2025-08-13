@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Six6s Baji - বাংলাদেশের সেরা অনলাইন বাজি প্ল্যাটফর্ম</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* জেনারেল স্টাইল */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        /* হেডার স্টাইল */
+        header {
+            background-color: #1a2a3a;
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #ffcc00;
+            font-weight: 700;
+        }
+        
+        .logo p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            color: #ddd;
+        }
+        
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .signup-btn {
+            background-color: #ff5722;
+            color: white;
+            box-shadow: 0 4px 8px rgba(255,87,34,0.3);
+        }
+        
+        .signup-btn:hover {
+            background-color: #e64a19;
+            transform: translateY(-2px);
+        }
+        
+        .login-btn {
+            background-color: transparent;
+            border: 2px solid #ffcc00;
+            color: #ffcc00;
+        }
+        
+        .login-btn:hover {
+            background-color: rgba(255,204,0,0.1);
+        }
+        
+        /* হিরো সেকশন */
+        .hero {
+            background: linear-gradient(135deg, #1a2a3a 0%, #0d1620 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-btn {
+            background-color: #ffcc00;
+            color: #1a2a3a;
+            font-weight: 700;
+            font-size: 18px;
+            padding: 15px 30px;
+            border-radius: 50px;
+            box-shadow: 0 8px 15px rgba(255,204,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-btn:hover {
+            background-color: #ffd633;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(255,204,0,0.4);
+        }
+        
+        /* ফিচারস সেকশন */
+        .features {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-box {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-box i {
+            font-size: 3rem;
+            color: #ff5722;
+            margin-bottom: 20px;
+        }
+        
+        .feature-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #1a2a3a;
+        }
+        
+        .feature-box p {
+            color: #666;
+            font-size: 1rem;
+        }
+        
+        /* বোনাস সেকশন */
+        .bonus {
+            background: linear-gradient(135deg, #ff5722 0%, #e64a19 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .bonus h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .bonus p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        /* পেমেন্ট মেথডস */
+        .payment-methods {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        
+        .payment-methods h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #1a2a3a;
+        }
+        
+        .payment-icons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .payment-icon {
+            font-size: 3rem;
+            color: #555;
+        }
+        
+        /* ফুটার */
+        footer {
+            background-color: #1a2a3a;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #ffcc00;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* হোয়াটসঅ্যাপ বাটন */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+        
+        .whatsapp-float i {
+            margin-top: 5px;
+        }
+        
+        /* রেস্পন্সিভ স্টাইল */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .auth-buttons {
+                margin-top: 20px;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .features-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- হেডার সেকশন -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>Six6s Baji</h1>
+                <p>বাংলাদেশের সবচেয়ে বিশ্বস্ত অনলাইন বাজি প্ল্যাটফর্ম</p>
+            </div>
+            <div class="auth-buttons">
+                <a href="https://6s03p15aff2025.com/af/XaiS073r/Singup" class="btn signup-btn">নিবন্ধন করুন</a>
+                <a href="#" class="btn login-btn">লগইন</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- হিরো সেকশন -->
+    <section class="hero">
+        <div class="container">
+            <h2>আজই নিবন্ধন করুন এবং পাচ্ছেন ১০০% ডিপোজিট বোনাস!</h2>
+            <p>বাংলাদেশের সবচেয়ে দ্রুত, সহজ ও নিরাপদ বাজি প্ল্যাটফর্মে আপনাকে স্বাগতম। ক্রিকেট, ফুটবল, কাবাডি সহ সকল জনপ্রিয় খেলায় বাজি ধরুন এবং বড় অঙ্কের জয়ের সুযোগ নিন।</p>
+            <a href="https://6s03p15aff2025.com/af/XaiS073r/Singup" class="btn cta-btn">এখনই নিবন্ধন করুন</a>
+        </div>
+    </section>
+
+    <!-- ফিচারস সেকশন -->
+    <section class="features">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2rem; color: #1a2a3a; margin-bottom: 20px;">কেন Six6s Baji বেছে নিবেন?</h2>
+            <div class="features-container">
+                <div class="feature-box">
+                    <i class="fas fa-bolt"></i>
+                    <h3>দ্রুত লেনদেন</h3>
+                    <p>বিকাশ, নগদ, রকেটের মাধ্যমে মাত্র কয়েক মিনিটে ডিপোজিট এবং উইথড্র করুন। বাংলাদেশের যেকোনো প্রান্ত থেকে দ্রুততম লেনদেনের নিশ্চয়তা।</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fas fa-gift"></i>
+                    <h3>১০০% বোনাস</h3>
+                    <p>প্রথম ডিপোজিটে ১০০% অতিরিক্ত বোনাস পান। সর্বোচ্চ ১০,০০০ টাকা পর্যন্ত বোনাস উপভোগ করুন এবং আপনার জয়ের সম্ভাবনা দ্বিগুণ করুন।</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fas fa-headset"></i>
+                    <h3>২৪/৭ সাপোর্ট</h3>
+                    <p>যেকোনো সমস্যা বা প্রশ্নে আমাদের বিশেষজ্ঞ সাপোর্ট টিম ২৪ ঘন্টাই আপনার সেবায় প্রস্তুত। হোয়াটসঅ্যাপে সরাসরি বার্তা পাঠান।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- বোনাস সেকশন -->
+    <section class="bonus">
+        <div class="container">
+            <h2>১০০% ডিপোজিট বোনাস!</h2>
+            <p>আপনার প্রথম ডিপোজিটের সমপরিমাণ বোনাস পেতে আজই নিবন্ধন করুন। এই অফারটি সীমিত সময়ের জন্য, তাই দেরি না করে এখনই সুযোগটি গ্রহণ করুন।</p>
+            <a href="https://6s03p15aff2025.com/af/XaiS073r/Singup" class="btn cta-btn" style="background-color: white; color: #e64a19;">এখনই বোনাস নিন</a>
+        </div>
+    </section>
+
+    <!-- পেমেন্ট মেথডস -->
+    <section class="payment-methods">
+        <div class="container">
+            <h2>আমাদের গ্রহণযোগ্য পেমেন্ট পদ্ধতি</h2>
+            <p>বাংলাদেশের সকল জনপ্রিয় মোবাইল ফাইন্যান্স সার্ভিসের মাধ্যমে সহজেই লেনদেন করুন</p>
+            <div class="payment-icons">
+                <i class="fas fa-mobile-alt payment-icon" title="বিকাশ"></i>
+                <i class="fas fa-wallet payment-icon" title="নগদ"></i>
+                <i class="fas fa-rocket payment-icon" title="রকেট"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- ফুটার -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">প্রাইভেসি পলিসি</a>
+                <a href="#">টার্মস অ্যান্ড কন্ডিশনস</a>
+                <a href="#">যোগাযোগ</a>
+                <a href="#">এফিলিয়েট প্রোগ্রাম</a>
+            </div>
+            <p class="copyright">© 2023 Six6s Baji. সকল অধিকার সংরক্ষিত।</p>
+        </div>
+    </footer>
+
+    <!-- হোয়াটসঅ্যাপ ফ্লোটিং বাটন -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/+8801303513957" target="_blank" style="color: white;">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+        // অ্যানিমেশন এবং ইন্টারঅ্যাক্টিভিটি
+        document.addEventListener('DOMContentLoaded', function() {
+            // ফিচার বক্স অ্যানিমেশন
+            const featureBoxes = document.querySelectorAll('.feature-box');
+            featureBoxes.forEach((box, index) => {
+                box.style.opacity = '0';
+                box.style.transform = 'translateY(20px)';
+                box.style.transition = `all 0.5s ease ${index * 0.2}s`;
+                
+                setTimeout(() => {
+                    box.style.opacity = '1';
+                    box.style.transform = 'translateY(0)';
+                }, 500);
+            });
+            
+            // সাইন আপ বাটন ক্লিক ইভেন্ট
+            const signupBtn = document.querySelector('.signup-btn');
+            signupBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.location.href = "https://6s03p15aff2025.com/af/XaiS073r/Singup";
+            });
+            
+            // CTA বাটন ক্লিক ইভেন্ট
+            const ctaBtns = document.querySelectorAll('.cta-btn');
+            ctaBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.location.href = "https://6s03p15aff2025.com/af/XaiS073r/Singup";
+                });
+            });
+        });
+    </script>
+</body>
+</html>
